@@ -18,9 +18,9 @@ public class BackImage : MonoBehaviour
         transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
 
         // ‹«ŠEü‚ğ’´‚¦‚½‚ç
-        if (transform.position.y < -10f)
+        if (transform.position.y < -10.003202f)
         {
-            transform.position = new Vector3(0, 10.176f, 0);
+            transform.position = new Vector3(0, 11.31912f, 0);
         }
     }
 }
