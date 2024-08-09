@@ -10,14 +10,14 @@ public class GameManagement : MonoBehaviour
     {
         Timer = 0;
         poolManager = FindObjectOfType<PoolManager>(); //プールマネージャーのインスタンスの取得
-        
+        poolManager.GetPooledObject(); //これを呼び出すことで障害物が生成される
     }
 
     void Update()
     {
         Timer += Time.deltaTime;
 
-        if (Timer > 5)
+        if (Timer > 0.5)
         {
             Timer = 0;
             poolManager.GetPooledObject(); //これを呼び出すことで障害物が生成される

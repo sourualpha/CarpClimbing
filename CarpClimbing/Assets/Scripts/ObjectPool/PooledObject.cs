@@ -7,7 +7,7 @@ public class PooledObject : MonoBehaviour
 {
     private PoolManager pool;
     public PoolManager Pool { get => pool; set => pool = value; }
-    private float speed = -3;
+    private float speed = -10;
     public void Release()
     {
         pool.ReturnToPool(this);
