@@ -18,6 +18,7 @@ public class PooledObject : MonoBehaviour
         this.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
     }
 
+    //‰æ–ÊŠO‚Éo‚½‚Ìˆ—
     private void OnBecameInvisible()
     {
         pool.ReturnToPool(this);
