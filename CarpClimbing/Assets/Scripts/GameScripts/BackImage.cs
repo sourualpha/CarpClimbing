@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BackImage : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
+
     public float moveSpeed = 0.5f;
+    float addSpeedTime = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +18,26 @@ public class BackImage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
 
-        // ‹«ŠEü‚ğ’´‚¦‚½‚ç
-        if (transform.position.y < -8.687283f)
+        if (0f < gameManager.GameTime) 
         {
-            transform.position = new Vector3(0, 11.31912f, 0);
+            transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
+
+            // ‹«ŠEü‚ğ’´‚¦‚½‚ç
+            if (transform.position.y <= -20f)
+            {
+                transform.position = new Vector3(0, 10f, 0);
+            }
+            if(addSpeedTime < gameManager.GameTime)
+            {
+                moveSpeed += moveSpeed + 0.1f;
+                addSpeedTime += 20f;
+
+
+            }
+
+
+
         }
     }
 }
