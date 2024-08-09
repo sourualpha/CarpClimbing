@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class GameManagement : MonoBehaviour
 {
-    PoolManager poolManager;
+    PoolManager poolManager; //プールマネージャーのインスタンス
     float Timer;
-    // Start is called before the first frame update
     void Start()
     {
         Timer = 0;
-        poolManager = FindObjectOfType<PoolManager>();
-        
+        poolManager = FindObjectOfType<PoolManager>(); //プールマネージャーのインスタンスの取得
+        poolManager.GetPooledObject(); //これを呼び出すことで障害物が生成される
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timer += Time.deltaTime;
 
-        if (Timer > 5)
+        if (Timer > 0.5)
         {
             Timer = 0;
-            poolManager.GetPooledObject();
+            poolManager.GetPooledObject(); //これを呼び出すことで障害物が生成される
         }
     }
 }

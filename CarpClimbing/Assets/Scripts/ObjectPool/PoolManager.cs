@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    [SerializeField] private uint initPoolSize;
-    [SerializeField] private List<PooledObject> objectToPool;
+    [SerializeField] private uint initPoolSize; //最初に生成する個数
+    [SerializeField] private List<PooledObject> objectToPool; //prefabを入れるリスト
 
     private List<PooledObject> pool;
 
@@ -13,6 +13,7 @@ public class PoolManager : MonoBehaviour
         SetupPool();
     }
 
+    //プールの初期化
     private void SetupPool()
     {
         pool = new List<PooledObject>();
@@ -30,6 +31,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
+    //表示する処理
     public PooledObject GetPooledObject()
     {
         if (pool.Count == 0)
@@ -44,16 +46,19 @@ public class PoolManager : MonoBehaviour
 
         // ランダムにプールから取得
         int randomPoolIndex = UnityEngine.Random.Range(0, pool.Count);
+
+        //表示する際にX軸を-2～2までのランダムにして生成する
         int randomTransfomIndex = UnityEngine.Random.Range(-2, 2);
         PooledObject nextInstance = pool[randomPoolIndex];
         pool.RemoveAt(randomPoolIndex);
 
-        nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0);
+        nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0); //表示する際の座標の設定
         nextInstance.gameObject.SetActive(true);
 
         return nextInstance;
     }
 
+    //非表示にする処理
     public void ReturnToPool(PooledObject pooledObject)
     {
         pool.Add(pooledObject);
