@@ -5,9 +5,11 @@ public class PoolManager : MonoBehaviour
 {
     [SerializeField] private uint initPoolSize; //最初に生成する個数
     [SerializeField] private List<PooledObject> objectToPool; //prefabを入れるリスト
-
+    [SerializeField] ScoreManager scoreManager;
 
     private List<PooledObject> pool;
+    private int speed = 10;
+    private int addSpeedCount = 40;
 
     private void Start()
     {
@@ -27,13 +29,7 @@ public class PoolManager : MonoBehaviour
                 PooledObject instance = Instantiate(objectToPool[i]);
                 instance.Pool = this;
                 instance.gameObject.SetActive(false);
-
-                //if ()
-                /*{
-
-                }*/
-
-                instance.speed = 50;
+                instance.speed = speed;
 
 
                 pool.Add(instance);
@@ -63,6 +59,12 @@ public class PoolManager : MonoBehaviour
         pool.RemoveAt(randomPoolIndex);
 
         nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0); //表示する際の座標の設定
+        if (addSpeedCount < scoreManager.gameScore)
+        {
+            speed += 1;
+            addSpeedCount += 10;
+        }
+        nextInstance.speed = speed;
         nextInstance.gameObject.SetActive(true);
 
         return nextInstance;
