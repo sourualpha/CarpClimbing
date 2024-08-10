@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +11,6 @@ public class Player : MonoBehaviour
 
     float hitTimer = 0;
     bool hit = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,11 +24,7 @@ public class Player : MonoBehaviour
             hitTimer = 0;
             hit = false;
             GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);
-
         }
-
-
-
     }
 
     void OnMouseDrag()
@@ -64,7 +55,7 @@ public class Player : MonoBehaviour
         HP -= 1;
         if(HP <= 0)
         {
-
+            //SceneManager.LoadScene("Result");
         }
         hit = true;
         GetComponent<Renderer>().material.color = new Color32(255, 100, 100, 255);

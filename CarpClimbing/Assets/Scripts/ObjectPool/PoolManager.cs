@@ -8,7 +8,7 @@ public class PoolManager : MonoBehaviour
     [SerializeField] ScoreManager scoreManager;
 
     private List<PooledObject> pool;
-    private int speed = 10;
+    private float speed = 10;
     private int addSpeedCount = 40;
 
     private void Start()
@@ -30,7 +30,6 @@ public class PoolManager : MonoBehaviour
                 instance.Pool = this;
                 instance.gameObject.SetActive(false);
                 instance.speed = speed;
-
 
                 pool.Add(instance);
             }
@@ -61,8 +60,8 @@ public class PoolManager : MonoBehaviour
         nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0); //ï\é¶Ç∑ÇÈç€ÇÃç¿ïWÇÃê›íË
         if (addSpeedCount < scoreManager.gameScore)
         {
-            speed += 1;
-            addSpeedCount += 10;
+            speed += 1 / 2;
+            addSpeedCount += 20;
         }
         nextInstance.speed = speed;
         nextInstance.gameObject.SetActive(true);
