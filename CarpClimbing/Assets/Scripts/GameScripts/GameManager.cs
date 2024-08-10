@@ -30,10 +30,8 @@ public class GameManager : MonoBehaviour
             if (Timer > 2)
             {
                 Timer = 0;
-
                 poolManager.GetPooledObject();
             }
-
         }
 
     }

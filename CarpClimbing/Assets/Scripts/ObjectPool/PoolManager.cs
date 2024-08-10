@@ -6,6 +6,7 @@ public class PoolManager : MonoBehaviour
     [SerializeField] private uint initPoolSize; //Å‰‚É¶¬‚·‚éŒÂ”
     [SerializeField] private List<PooledObject> objectToPool; //prefab‚ğ“ü‚ê‚éƒŠƒXƒg
 
+
     private List<PooledObject> pool;
 
     private void Start()
@@ -26,6 +27,15 @@ public class PoolManager : MonoBehaviour
                 PooledObject instance = Instantiate(objectToPool[i]);
                 instance.Pool = this;
                 instance.gameObject.SetActive(false);
+
+                //if ()
+                /*{
+
+                }*/
+
+                instance.speed = 50;
+
+
                 pool.Add(instance);
             }
         }

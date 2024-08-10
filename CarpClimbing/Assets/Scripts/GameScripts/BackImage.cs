@@ -29,14 +29,19 @@ public class BackImage : MonoBehaviour
                 transform.position = new Vector3(0, 10f, 0);
             }
 
-/*            if(addSpeedTime < gameManager.GameTime)
-            {
-                moveSpeed += moveSpeed + 0.1f;
-                addSpeedTime += 20f;
+            /*            if(addSpeedTime < gameManager.GameTime)
+                        {
+                            moveSpeed += moveSpeed + 0.1f;
+                            addSpeedTime += 20f;
 
 
-            }
-*/
+                        }
+            */
         }
+        else if (CompareTag("Waterfall"))
+        {
+            transform.position += new Vector3(0, (-moveSpeed * 0.5f) * Time.deltaTime, 0);
+        }
+
     }
 }
