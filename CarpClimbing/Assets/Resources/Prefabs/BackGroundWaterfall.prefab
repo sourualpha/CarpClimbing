@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7042521264791562032}
   m_Layer: 0
   m_Name: BackGroundWaterfall
-  m_TagString: Untagged
+  m_TagString: Waterfall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543a072fc0ada7a45bf6ff78b20f9594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   moveSpeed: 4
