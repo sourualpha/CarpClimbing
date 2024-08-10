@@ -7,13 +7,7 @@ public class BackImage : MonoBehaviour
     [SerializeField] GameManager gameManager;
 
     public float moveSpeed = 0.5f;
-    //float addSpeedTime = 20f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    float addSpeedTime = 16f;
 
     // Update is called once per frame
     void Update()
@@ -29,14 +23,14 @@ public class BackImage : MonoBehaviour
                 transform.position = new Vector3(0, 10f, 0);
             }
 
-            /*            if(addSpeedTime < gameManager.GameTime)
-                        {
-                            moveSpeed += moveSpeed + 0.1f;
-                            addSpeedTime += 20f;
+            if (addSpeedTime < gameManager.GameTime && CompareTag("Waterfall"))
+            {
+                moveSpeed += 0.05f;
+                addSpeedTime += 8f;
 
 
-                        }
-            */
+            }
+
         }
         else if (CompareTag("Waterfall"))
         {
