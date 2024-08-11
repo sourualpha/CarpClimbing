@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             Timer += Time.deltaTime;
 
-            if (Timer > 2)
+            if (Timer > 1)
             {
                 Timer = 0;
                 poolManager.GetPooledObject();

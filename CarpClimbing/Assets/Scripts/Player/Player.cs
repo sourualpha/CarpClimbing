@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] GameObject resultPanel;
+    [SerializeField] GameObject[] HPimage;
+
     public Vector3 screenPoint;
 
     public int HP = 3;
 
     private float hitTimer = 0;
     private bool hit = false;
+
+    private void Start()
+    {
+        resultPanel.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +33,7 @@ public class Player : MonoBehaviour
             hit = false;
             GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);
         }
+
     }
 
     void OnMouseDrag()
@@ -55,12 +64,13 @@ public class Player : MonoBehaviour
         HP -= 1;
         if(HP <= 0)
         {
-            //SceneManager.LoadScene("Result");
+            resultPanel.SetActive(true);
+
         }
+        
+        HPimage[HP].SetActive(false);
+
         hit = true;
         GetComponent<Renderer>().material.color = new Color32(255, 100, 100, 255);
     }
-
-
-
 }

@@ -60,7 +60,10 @@ public class PoolManager : MonoBehaviour
         nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0); //ï\é¶Ç∑ÇÈç€ÇÃç¿ïWÇÃê›íË
         if (addSpeedCount < scoreManager.gameScore)
         {
-            speed += 0.5f;
+            if (speed > 25f)
+            {
+                speed += 0.5f;
+            }
             addSpeedCount += 40;
         }
         nextInstance.speed = speed;
