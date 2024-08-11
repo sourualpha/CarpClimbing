@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (gameManager.GameTime >= 0)
         {
-            score = gameManager.GameTime * 2.5;
+            score = gameManager.GameTime * 10;
             gameScore = (int)score;
         }
 

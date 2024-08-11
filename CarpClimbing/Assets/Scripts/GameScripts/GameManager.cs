@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     PoolManager poolManager;
-    float Timer;
+    private float Timer;
     public float GameTime;
     // Start is called before the first frame update
     void Start()

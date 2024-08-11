@@ -26,7 +26,7 @@ public class BackImage : MonoBehaviour
             if (addSpeedTime < gameManager.GameTime && CompareTag("Waterfall"))
             {
                 moveSpeed += 0.05f;
-                addSpeedTime += 8f;
+                addSpeedTime += 4f;
 
 
             }
