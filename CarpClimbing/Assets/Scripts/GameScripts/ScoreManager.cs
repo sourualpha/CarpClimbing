@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         scoreText.text = gameScore.ToString() + "m";
-        lastScoreText.text = gameScore.ToString() + "m “o‚Á‚½I";
+        lastScoreText.text = gameScore.ToString() + "m “o‚Á‚½!";
 
         if(score > 1000) 
         { 

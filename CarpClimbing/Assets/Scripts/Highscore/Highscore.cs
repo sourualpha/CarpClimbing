@@ -31,7 +31,7 @@ public class Highscore : MonoBehaviour
 
         }
 
-        highScoreText.text = "ハイスコア: " + highScore.ToString() + "m";
+        highScoreText.text = "ハイスコア:" + highScore.ToString() + "m";
 
     }
 }
