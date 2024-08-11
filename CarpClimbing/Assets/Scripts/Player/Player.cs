@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 
     public int HP = 3;
 
-    float hitTimer = 0;
-    bool hit = false;
+    private float hitTimer = 0;
+    private bool hit = false;
 
     // Update is called once per frame
     void Update()
