@@ -21,14 +21,15 @@ public class BackImage : MonoBehaviour
             if (transform.position.y <= -20f)
             {
                 transform.position = new Vector3(0, 10f, 0);
+
+
+
             }
 
             if (addSpeedTime < gameManager.GameTime && CompareTag("Waterfall"))
             {
                 moveSpeed += 0.05f;
                 addSpeedTime += 4f;
-
-
             }
 
         }

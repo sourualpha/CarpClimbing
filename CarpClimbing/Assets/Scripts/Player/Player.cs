@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject resultPanel;
     [SerializeField] GameObject[] HPimage;
     [SerializeField] Highscore _highScore;
+    AudioSource _audioSource;
+    [SerializeField] AudioClip _hitSE;
 
     public Vector3 screenPoint;
 
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         resultPanel.SetActive(false);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
+        _audioSource.PlayOneShot(_hitSE);
         HP -= 1;
         if(HP <= 0)
         {
@@ -73,5 +77,6 @@ public class Player : MonoBehaviour
 
         hit = true;
         GetComponent<Renderer>().material.color = new Color32(255, 100, 100, 255);
+
     }
 }

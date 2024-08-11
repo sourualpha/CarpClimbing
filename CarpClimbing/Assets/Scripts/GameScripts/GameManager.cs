@@ -17,9 +17,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Timer = 0;
-        GameTime = -4;
+        GameTime = -2;
         poolManager = FindObjectOfType<PoolManager>();
-
     }
 
     // Update is called once per frame
