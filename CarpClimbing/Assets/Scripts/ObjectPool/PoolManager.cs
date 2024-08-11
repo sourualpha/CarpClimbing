@@ -8,7 +8,7 @@ public class PoolManager : MonoBehaviour
     [SerializeField] ScoreManager scoreManager;
 
     private List<PooledObject> pool;
-    private float speed = 10;
+    private float speed = 7;
     private int addSpeedCount = 40;
 
     private void Start()
@@ -60,7 +60,7 @@ public class PoolManager : MonoBehaviour
         nextInstance.gameObject.transform.position = new Vector3(randomTransfomIndex, 6, 0); //ï\é¶Ç∑ÇÈç€ÇÃç¿ïWÇÃê›íË
         if (addSpeedCount < scoreManager.gameScore)
         {
-            if (speed > 25f)
+            if (speed < 25f)
             {
                 speed += 0.5f;
             }

@@ -10,6 +10,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] Text lastScoreText;
     [SerializeField] Player player;
+    [SerializeField] Image reaultImage;
+    [SerializeField] Sprite resultSprite1;
+    [SerializeField] Sprite resultSprite2;
 
     double score = 0;
     public int gameScore;
@@ -30,5 +33,15 @@ public class ScoreManager : MonoBehaviour
 
         scoreText.text = gameScore.ToString() + "m";
         lastScoreText.text = gameScore.ToString() + "m “o‚Á‚½I";
+
+        if(score > 1000) 
+        { 
+            reaultImage.sprite = resultSprite2;
+        }
+        else if(score > 500)
+        {
+            reaultImage.sprite = resultSprite1;
+        }
+
     }
 }

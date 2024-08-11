@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] GameObject resultPanel;
     [SerializeField] GameObject[] HPimage;
+    [SerializeField] Highscore _highScore;
 
     public Vector3 screenPoint;
 
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
         if(HP <= 0)
         {
             resultPanel.SetActive(true);
-
+            _highScore.UpdateScore();
         }
         
         HPimage[HP].SetActive(false);
