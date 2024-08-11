@@ -62,9 +62,9 @@ public class PoolManager : MonoBehaviour
         {
             if (speed < 25f)
             {
-                speed += 0.5f;
+                speed += 0.4f;
             }
-            addSpeedCount += 40;
+            addSpeedCount += 50;
         }
         nextInstance.speed = speed;
         nextInstance.gameObject.SetActive(true);
